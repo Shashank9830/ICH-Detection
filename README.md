@@ -40,7 +40,8 @@ model = load_model(trained_model_dir + 'model_trained_last.h5') # load the train
 
 
 ```python
-case = rsample(os.listdir(input_dir), 1)[0] # a case is selected at random from the input directory
+#case = rsample(os.listdir(input_dir), 1)[0] # a case is selected at random from the input directory
+case = os.listdir(input_dir)[1]
 caseID = case[:-4]
 ```
 
@@ -105,25 +106,30 @@ plt.show()
 print(du.generate_patient_report(np.squeeze(prediction), caseID))
 ```
 
-    Report for CASE ID : ID_9b154947a
+    Report for CASE ID : ID_012e40ef2
     
     +-----------------+-------------+
     | Hemorrhage Type | Probability |
     +-----------------+-------------+
-    |Epidural         |    0.1187023|
+    |Epidural         |   0.16530327|
     +-----------------+-------------+
-    |Intraparenchymal |    0.0136037|
+    |Intraparenchymal |   0.38851565|
     +-----------------+-------------+
-    |Intraventricular |    5.827e-05|
+    |Intraventricular |   0.55605555|
     +-----------------+-------------+
-    |Subarachnoid     |   0.10832085|
+    |Subarachnoid     |   0.23558225|
     +-----------------+-------------+
-    |Subdural         |    0.0100157|
+    |Subdural         |   0.42529142|
     +-----------------+-------------+
-    |Any              |    0.2608971|
+    |Any              |   0.99521673|
     +-----------------+-------------+
     
     ** This report is generated using a complex computer algorithm.
     ** No medical decisions should be based solely on this report.
     ** Exercise extreme caution.
     
+
+
+```python
+
+```
